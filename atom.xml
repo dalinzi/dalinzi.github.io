@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-25T09:57:19.443Z</updated>
+  <updated>2016-07-25T14:32:45.835Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2048小游戏</title>
+    <link href="http://yoursite.com/2016/07/25/2048%E5%B0%8F%E6%B8%B8%E6%88%8F/"/>
+    <id>http://yoursite.com/2016/07/25/2048小游戏/</id>
+    <published>2016-07-25T14:29:21.000Z</published>
+    <updated>2016-07-25T14:32:45.835Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="2048小游戏"><a href="#2048小游戏" class="headerlink" title="2048小游戏"></a>2048小游戏</h3><p><img src="https://github.com/dalinzi/dalinzi.github.io/blob/master/code/my2048/2048.png?raw=true" alt="enter image description here"></p>
+<p>这款2048小游戏是参考慕课网上的教学视频<a href="http://www.imooc.com/view/76" target="_blank" rel="external">《慕课网2048私人订制》</a>制作的，基本实现了原版2048游戏。通过学习制作这个小游戏，我对游戏的逻辑与交互有了更深入的理解，也增加了javascript的实践经验。</p>
+<p>我的2048游戏入口：<a href="http://dalinzi.github.io/code/my2048/" target="_blank" rel="external">http://dalinzi.github.io/code/my2048/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;2048小游戏&quot;&gt;&lt;a href=&quot;#2048小游戏&quot; class=&quot;headerlink&quot; title=&quot;2048小游戏&quot;&gt;&lt;/a&gt;2048小游戏&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://github.com/dalinzi/dalinzi.githu
+    
+    </summary>
+    
+      <category term="游戏" scheme="http://yoursite.com/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="WebApp" scheme="http://yoursite.com/tags/WebApp/"/>
+    
+  </entry>
   
   <entry>
     <title>清除浮动常用的几种方法</title>
