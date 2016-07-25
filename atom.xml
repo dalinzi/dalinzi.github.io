@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-24T08:01:32.062Z</updated>
+  <updated>2016-07-25T09:57:19.443Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>清除浮动常用的几种方法</title>
+    <link href="http://yoursite.com/2016/07/25/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/07/25/清除浮动常用的几种方法/</id>
+    <published>2016-07-25T09:44:38.000Z</published>
+    <updated>2016-07-25T09:57:19.443Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为浮动框不在普通的文档流中，所以它不占据空间。<br>如下面的代码：浮动元素脱离了文档流，所以.container不占据空间。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">background</span>: gray;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.content</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background</span>: blue;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.sidebar</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background</span>: green;</div><div class="line">    <span class="attribute">float</span>: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="方法一：添加空标签"><a href="#方法一：添加空标签" class="headerlink" title="方法一：添加空标签"></a>方法一：添加空标签</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clear</span> &#123;</div><div class="line">    <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">class="container"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 在最后一个浮动元素下面添加一个空元素并清理它。--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"clear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>但是这个方法会添加了无意义的标签，如果有很多地方要清除浮动，那么将会出现大量的无意义的标签。</p>
+<h4 id="方法二：浮动容器元素"><a href="#方法二：浮动容器元素" class="headerlink" title="方法二：浮动容器元素"></a>方法二：浮动容器元素</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">background</span>: gray;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是与容器同级的元素会受到影响。</p>
+<h4 id="方法三：使用overflow属性"><a href="#方法三：使用overflow属性" class="headerlink" title="方法三：使用overflow属性"></a>方法三：使用overflow属性</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">background</span>: gray;</div><div class="line">    <span class="comment">/*使用overflow属性*/</span></div><div class="line">    <span class="attribute">overflow</span>: auto; <span class="comment">/*也可以把auto换成hidden*/</span></div><div class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>; <span class="comment">/*用于兼容IE6，也可以用width:100%*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>overflow属性有一个有用的副作用，这会自动清理包含的任何浮动元素。<br>不过使用overflow的时候，可能会对页面表现带来影响，而且这种影响是不确定的，你最好是能在多个浏览器上测试你的页面。</p>
+<h4 id="方法四：使用-after伪类"><a href="#方法四：使用-after伪类" class="headerlink" title="方法四：使用:after伪类"></a>方法四：使用:after伪类</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clear</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"."</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">visibility</span>: hidden;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container clear"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这个方法在大多数现代浏览器中都是有效的，淘宝首页也用了这种方式来清除浮动，但是在IE6和更低版本中不起作用，IE6下需要hack。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为浮动框不在普通的文档流中，所以它不占据空间。&lt;br&gt;如下面的代码：浮动元素脱离了文档流，所以.container不占据空间。&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;di
+    
+    </summary>
+    
+      <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
