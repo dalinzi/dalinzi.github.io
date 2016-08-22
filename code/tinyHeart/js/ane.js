@@ -13,6 +13,7 @@ aneObj.prototype.init = function(){//初始化海葵位置数组和长度数组
 		this.headY[i] = canHeight - 250 + Math.random() * 50;
 		this.amp[i] = Math.random() * 50 + 60;
 	}
+	this.alpha = 0;
 }
 aneObj.prototype.draw = function(){//绘制海葵
 	this.alpha += deltaTime * 0.0008;

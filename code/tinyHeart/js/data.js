@@ -9,6 +9,12 @@ dataObj.prototype.init = function(){
 	ctx1.font = "20px Verdana";
 	ctx1.textAlign = "center";
 
+	this.fruitNum = 0;
+	this.double = 1;
+	this.score = 0;
+	this.gameover = false;
+	this.alpha = 0;
+
 }
 dataObj.prototype.addScore = function(){
 	this.score += this.fruitNum * 100 * this.double;

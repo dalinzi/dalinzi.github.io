@@ -2,9 +2,6 @@ var babyObj = function(){
 	this.x;
 	this.y;
 	this.angle;
-	//this.babyEye = new Image();
-	//this.babyBody = new Image();
-	//this.babyTail = new Image();
 
 	this.babyTailTimer = 0;//用于尾部动画
 	this.babyTailCount = 0;
@@ -20,9 +17,17 @@ babyObj.prototype.init = function(){
 	this.x = canWidth * 0.5 - 50;
 	this.y = canHeight * 0.5 + 50;
 	this.angle = 0;
-	//this.babyEye.src = "./src/babyEye0.png";
-	//this.babyBody.src = "./src/babyFade0.png";
-	//this.babyTail.src = "./src/babyTail0.png";
+
+	this.babyTailTimer = 0;//用于尾部动画
+	this.babyTailCount = 0;
+
+	this.babyEyeTimer = 0;//用于眼睛动画
+	this.babyEyeCount = 0;
+	this.babyEyeInterval = 1000;
+
+	this.babyBodyTimer = 0;//用于身体动画
+	this.babyBodyCount = 0;
+	
 }
 babyObj.prototype.draw = function(){
 	//lerp x,y让小鱼位置趋向大鱼位置

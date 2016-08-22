@@ -2,9 +2,6 @@ var momObj = function(){
 	this.x;
 	this.y;
 	this.angle;//计算大鱼与鼠标的角度
-	//this.bigEye = new Image();
-	//this.bigBody = new Image();
-	//this.bigTail = new Image();
 
 	this.momTailTimer = 0;//用于尾部动画
 	this.momTailCount = 0;
@@ -20,9 +17,16 @@ momObj.prototype.init = function(){
 	this.x = canWidth * 0.5;
 	this.y = canHeight * 0.5;
 	this.angle = 0;
-	//this.bigEye.src = "./src/bigEye0.png";
-	//this.bigBody.src = "./src/bigSwim0.png";
-	//this.bigTail.src = "./src/bigTail0.png";
+	
+	this.momTailTimer = 0;//用于尾部动画
+	this.momTailCount = 0;
+
+	this.momEyeTimer = 0;//用于眼睛动画
+	this.momEyeCount = 0;
+	this.momEyeInterval = 1000;
+
+	this.momBodyTimer = 0;//用于身体动画
+	this.momBodyCount = 0;
 }
 momObj.prototype.draw = function(){
 	//lerp x,y让大鱼位置趋向鼠标位置

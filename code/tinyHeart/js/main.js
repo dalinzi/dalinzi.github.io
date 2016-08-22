@@ -36,6 +36,8 @@ var wave;//波纹效果
 var dust;//漂浮物
 var dustPic = [];//漂浮物图片数组
 
+var oBtn;
+
 function game(){
 	init();
 	gameloop();
@@ -47,6 +49,9 @@ function init(){
 	ctx1 = can1.getContext("2d");
 	can2 = document.getElementById("canvas2");//background
 	ctx2 = can2.getContext("2d");
+
+	oBtn = document.getElementById("new_game");
+	oBtn.addEventListener("click", new_game, false);
 
 	lastTime = Date.now();
 	deltaTime = 0;
@@ -149,4 +154,20 @@ function onMouseMove(e){
 			my = e.offSetY == undefined ? e.layerY : e.offSetY;
 		}
 	}
+}
+
+function new_game(){
+	lastTime = Date.now();
+	deltaTime = 0;
+
+	ane.init();
+	fruit.init();
+	mom.init();
+	baby.init();
+	data.init();
+	wave.init();
+	dust.init();
+
+	mx = canWidth * 0.5;
+	my = canHeight * 0.5;
 }
